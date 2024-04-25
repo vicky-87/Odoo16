@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <data>
+                <!-- ref.kota tree view -->
+                <record id="ref_kota_view_tree" model="ir.ui.view">
+                    <field name="name">ref.kota.view.tree</field>
+                    <field name="model">ref.kota</field>
+                    <field name="arch" type="xml">
+                        <tree>
+                            <!-- Add your fields here -->
+                            <field name="name"/>
+                            <field name="kode"/>
+                            <field name="singkat"/>
+                            <field name="keterangan"/>
+                            <field name="propinsi_id"/>
+                        </tree>
+                    </field>
+                </record>
+
+                    <!-- ref_kota form view -->
+                    <record id="ref_kota_view_form" model="ir.ui.view">
+                        <field name="name">ref.kota.view.form</field>
+                        <field name="model">ref.kota</field>
+                        <field name="arch" type="xml">
+                            <form string="">
+                                <sheet>
+                                    <group>
+                                        <!-- Add your fields here -->
+                                        <field name="name"/>
+                                        <field name="kode"/>
+                                        <field name="singkat"/>
+                                        <field name="keterangan"/>
+                                        <field name="propinsi_id"/>
+                                    </group>
+                                    <notebook>
+                                        <page name="kecamatan" string="Data Kecamatan">
+                                            <field name="kecamatan_ids">
+                                                <tree>
+                                                    <field name="name"/>
+                                                    <field name="kode"/>
+                                                </tree> 
+                                            </field>
+                                        </page>
+                                    </notebook>
+                                </sheet>
+                            </form>
+                        </field>
+                    </record>
+
+        <!-- ref.kota action window -->
+        <record id="ref_kota_action" model="ir.actions.act_window">
+            <field name="name">Data Kota</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ref.kota</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+
+        <!-- ref.kota search view -->
+        <record id="ref_kota_view_search" model="ir.ui.view">
+            <field name="name">ref.kota.view.search</field>
+            <field name="model">ref.kota</field>
+            <field name="arch" type="xml">
+                <search string="Search Description">
+                    <!-- Add your fields here -->
+                    <filter name="group_by_propinsi" string="Group Berdasarkan Propinsi" context="{'group_by': 'propinsi_id'}" />
+                    <field name="name"/>
+                    <field name="kode"/>
+                </search>
+            </field>
+        </record>
+        
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="ref_kota_menu_act" name="Data Kota" parent="wilayah_menu_categ" action="ref_kota_action" sequence="20"/>
+        
+        </data>
+        
+    
+
+</odoo>

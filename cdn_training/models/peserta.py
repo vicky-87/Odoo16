@@ -14,7 +14,7 @@ class Peserta(models.Model):
     hp_pasangan = fields.Char(string='No HP Istri/Suami')
     tmp_lahir = fields.Char(string='Tempat Lahir')
     tgl_lahir = fields.Date(string='Tanggal Lahir')
-    no_peserta = fields.Char(string='NO Peserta', readonly=True)
+    no_peserta = fields.Char(string='No Peserta')
     
 
     @api.model

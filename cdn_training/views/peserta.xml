@@ -141,7 +141,7 @@
             <field name="name">Peserta Kursus Perempuan</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">peserta</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
             <field name="domain">[('jenis_kel','=','P')]</field>
             <field name="context">{'default_jenis_kel':'P','default_is_menikah':True}</field>
             <field name="help" type="html">

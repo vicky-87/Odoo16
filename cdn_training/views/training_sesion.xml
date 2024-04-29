@@ -7,13 +7,14 @@
             <field name="name">Training Session</field>
             <field name="model">training.session</field>
             <field name="arch" type="xml">
-                <tree decoration-danger="jml_peserta==0"/>
-                <tree>
+                <tree decoration-danger="jml_peserta==0">
                     <field name="name"/>
                     <field name="start_date"/>
                     <field name="duration"/>
                     <field name="seats"/>
-                   
+                    <field name="instruktur_id"/>
+                    <field name="no_hp"/>
+                    <field name="jml_peserta"/>
                 </tree>
             </field>
         </record>
@@ -77,12 +78,25 @@
             </field>
         </record>
 
+        <!-- training.session calendar view -->
+        <record id="training_session_view_calendar" model="ir.ui.view">
+            <field name="name">training.session.view.calendar</field>
+            <field name="model">training.session</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendar Description" date_start="start_date" mode="month">
+                    <!-- Add your fields here -->
+                    <field name="name" />
+                    <field name="instruktur_id" filters="1"/>
+                </calendar>
+            </field>
+        </record>
+
         <!-- training_session action window -->
         <record id="training_session_action" model="ir.actions.act_window">
             <field name="name">Sesi Training</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">training.session</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,calendar</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     <!-- Add Text Here -->

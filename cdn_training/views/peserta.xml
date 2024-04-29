@@ -75,12 +75,56 @@
             </field>
         </record>
 
+        <!-- peserta kanban view -->
+        <record id="peserta_view_kanban" model="ir.ui.view">
+            <field name="name">peserta.view.kanban</field>
+            <field name="model">peserta</field>
+            <field name="arch" type="xml">
+                <kanban string="Kanban Description">
+                    <!-- Add your fields here -->
+                    <field name="id" />
+                    <field name="name" />
+                    <field name="jenis_kel" />
+                    <field name="tmp_lahir" />
+                    <field name="mobile" />
+                    <field name="image_256" />
+                
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                            <t t-if="record.image_256.raw_value">
+                                <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image:url('#{kanban_image('peserta','image_256', record.id.raw_value)}')"/>
+                                
+                            </t>
+                            <div class="oe_kanban_details">
+                                <h4>
+                                    <a type="open"><field name="name"/></a>
+                                </h4>
+                                <ul>
+                                    <li>
+                                        <span class="text-muted">Jenis Kelamin</span> <field name="jenis_kel"/>
+                                    </li>
+                                    <li>
+                                        <span class="text-muted">No HP</span> <field name="mobile"/>
+                                    </li>
+                                    <li>
+                                        <span class="text-muted">Tanggal Lahir</span> <field name="tgl_lahir"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+                </kanban>
+            </field>
+        </record>
+
         <!-- peserta action window -->
         <record id="peserta_action_laki" model="ir.actions.act_window">
             <field name="name">Peserta Kursus Laki-Laki</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">peserta</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
             <field name="domain">[('jenis_kel','=','L')]</field>
             <field name="context">{'default_jenis_kel':'L'}</field>
             <field name="help" type="html">

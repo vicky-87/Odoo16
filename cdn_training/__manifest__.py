@@ -36,7 +36,8 @@
         'views/kota.xml',
         'views/kecamatan.xml',
         'views/desa.xml',
-        'views/peserta.xml'
+        'views/peserta.xml',
+        'wizards/training_wizard.xml',
 
 
     ],

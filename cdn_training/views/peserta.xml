@@ -31,7 +31,7 @@
                             <group>
                                 <field name="no_peserta" />
                                 <field name="name" />
-                                <field name="jenis_kel" widget="radio" />
+                                <field name="jenis_kel" widget="radio" readonly="1"/>
                             </group>
                             <group>
                                 <field name="email" />
@@ -76,11 +76,30 @@
         </record>
 
         <!-- peserta action window -->
-        <record id="peserta_action" model="ir.actions.act_window">
-            <field name="name">Peserta Kursus</field>
+        <record id="peserta_action_laki" model="ir.actions.act_window">
+            <field name="name">Peserta Kursus Laki-Laki</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">peserta</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('jenis_kel','=','L')]</field>
+            <field name="context">{'default_jenis_kel':'L'}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+
+        <record id="peserta_action_perempuan" model="ir.actions.act_window">
+            <field name="name">Peserta Kursus Perempuan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">peserta</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('jenis_kel','=','P')]</field>
+            <field name="context">{'default_jenis_kel':'P','default_is_menikah':True}</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     <!-- Add Text Here -->
@@ -92,8 +111,8 @@
         </record>
 
         <!-- This Menu Item must have a parent and an action -->
-        <menuitem id="peserta_menu_act" name="Peserta Kursus" parent="session_menu_categ" action="peserta_action" sequence="5"/>
-    
+        <menuitem id="peserta_laki_menu_act" name="Peserta Kursus Laki-Laki" parent="session_menu_categ" action="peserta_action_laki" sequence="5"/>
+        <menuitem id="peserta_perempuan_menu_act" name="Peserta Kursus Perempuan" parent="session_menu_categ" action="peserta_action_perempuan" sequence="6"/>    
     </data>
     
 </odoo>

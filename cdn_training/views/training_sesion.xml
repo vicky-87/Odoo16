@@ -7,6 +7,7 @@
             <field name="name">Training Session</field>
             <field name="model">training.session</field>
             <field name="arch" type="xml">
+                <tree decoration-danger="jml_peserta==0"/>
                 <tree>
                     <field name="name"/>
                     <field name="start_date"/>

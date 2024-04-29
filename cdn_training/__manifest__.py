@@ -1,31 +1,33 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Training odoo16",
-
-    'summary': """
-        Membuat module odoo16""",
+    'name': "Training Odoo16",
+    'summary':""" Membuat Module Odoo16 """,
 
     'description': """
-        Long description of module's purpose
+        Ini Odoo16
     """,
 
     'author': "Cendana2000",
+    
+    'category': 'Themes/front',
     'website': "https://www.cendana2000.co.id",
+    'license': 'LGPL-3', 
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    # 'category': 'Uncategorized',
     'version': '16.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
 
     # always loaded
     'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
+        'data/sequence.xml',
         'views/menu_training.xml',
         'views/training_course.xml',
         'views/instruktur.xml',
@@ -33,7 +35,8 @@
         'views/propinsi.xml',
         'views/kota.xml',
         'views/kecamatan.xml',
-        'views/desa.xml'
+        'views/desa.xml',
+        'views/peserta.xml'
 
 
     ],
@@ -41,5 +44,5 @@
     'demo': [
         'demo/demo.xml',
     ],
-    'apllication':True,
+    'aplication':True
 }

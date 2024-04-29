@@ -22,17 +22,26 @@
             <field name="model">training.session</field>
             <field name="arch" type="xml">
                 <form string="">
+                <header>
+                    <button string="Konfirmasi" states="draft" name="action_confirm" type="object" class="oe_highlight"/>
+                    <button string="Selesai" states="progress" name="action_done" type="object" class="oe_highlight"/>
+                    <button string="Set Draft" states="progress" name="action_draft" type="object" groups="cdn_training.group_training_admin"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,progress,done"/>
+                </header>
                     <sheet>
+                            <widget name="web_ribbon" text="Selesai" bg_color="bg-info" attrs="{'invisible':[('state','!=','done')]}" />
+                            <group name="session" string="Sesi Training">
                                 <group>
-                                    <field name="name"/>
-                                    <field name="start_date"/>
-                                    <field name="duration"/>
+                                    <field name="name" attrs="{'readonly' : [('state','!=','draft')]}"/>
+                                    <field name="start_date" attrs="{'readonly' : [('state','!=','draft')]}"/>
+                                    <field name="duration" attrs="{'readonly' : [('state','!=','draft')]}"/>
                                 </group> 
                                 <group>
-                                    <field name="seats"/>
-                                    <field name="course_id"/>
-                                    <field name="instruktur_id"/>
+                                    <field name="seats" attrs="{'readonly' : [('state','!=','draft')]}"/>
+                                    <field name="course_id" attrs="{'readonly' : [('state','!=','draft')]}"/>
+                                    <field name="instruktur_id" attrs="{'readonly' : [('state','!=','draft')]}"/>
                                 </group> 
+                            </group>
                             <group name="identitas_instruktur" string="Identitas Instruktur">
                                 <group>
                                     <field name="alamat"/>
@@ -43,14 +52,33 @@
                                     <field name="jenis_kel"/>
                                 </group>
                             </group>
+                            <group>
+                                <field name="jml_peserta" />
+                            </group>
+                            <notebook>
+                                <page name="peserta" string="Daftar Peserta Hadir">
+                                    <field name="peserta_ids" attrs="{'readonly' : [('state','!=','draft')]}">
+                                        <tree>
+                                            <field name="name" />
+                                            <field name="jenis_kel" />
+                                            <field name="mobile" />
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>
 
         <!-- training_session action window -->
         <record id="training_session_action" model="ir.actions.act_window">
-            <field name="name">Session Training</field>
+            <field name="name">Sesi Training</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">training.session</field>
             <field name="view_mode">tree,form</field>
@@ -64,7 +92,7 @@
             </field>
         </record>
 
-        <menuitem id="session_menu_act" name="Session" parent="session_menu_categ" action="training_session_action" sequence="10"/>
+        <menuitem id="session_menu_act" name="Sesi Training" parent="session_menu_categ" action="training_session_action" sequence="10"/>
     </data>
     
 </odoo>

@@ -6,7 +6,7 @@
 
         <menuitem id="pengaturan_menu_categ" name="Pengaturan" parent="training_menu_root" sequence="50"/>
 
-        <menuitem id="session_menu_categ" name="Session" parent="training_menu_root" sequence="40"/>
+        <menuitem id="session_menu_categ" name="Training Session" parent="training_menu_root" sequence="40"/>
 
         <menuitem id="wilayah_menu_categ" name="Data Wilayah" parent="pengaturan_menu_categ" sequence="30"/>
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <!-- <menuitem id="menu_hospital_root" name="Hospital Management" sequence="0" web_icon="om_hospital,static/description/icon.png"/> -->
+
+        <menuitem
+            id="menu_hospital_root"
+            name="Hospital"
+            web_icon = "om_hospital,static/description/icon.png"
+            sequence="0"/>
+            
+        <menuitem
+            id="menu_patient_master"
+            name="Patient Details"
+            parent="menu_hospital_root"
+            sequence="0"/>
+
+        <!-- <menuitem
+            id="menu_patient"
+            name="Patient"
+            action="action_hospital_patient"
+            sequence="0"/> -->
+
+    </data>    
+
+</odoo>

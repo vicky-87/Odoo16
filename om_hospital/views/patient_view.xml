@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> 
+
+        <!-- view.hospital.patien.view -->
+        <record id="view.hospital.patient.tree" model="ir.ui.view">
+            <field name="name">view.hospital.patient.tree</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                     <field name="name" string="Patient Name"/>
+                    <field name="age" />
+                    <field name="gender" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- view.hospital.patient.form -->
+        <record id="view_hospital_patient_form" model="ir.ui.view">
+            <field name="name">hospital.patient.form </field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <group>
+                                <!-- Add your fields here -->
+                                <field name="name" />
+                                <field name="age" />
+                            </group>
+                            <group>
+                                <field name="gender" />
+                            </group>
+                        </group>
+                        </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- action.hospital.patient  window -->
+        <record id="action_hospital_patient" model="ir.actions.act_window">
+            <field name="name">Patients </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.patient</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create your first patients!
+                </p>
+            </field>
+        </record>
+        <menuitem
+            id="menu_patient"
+            name="Patient"
+            action="action_hospital_patient"
+            parent="menu_patient_master"
+            sequence="0"/>
+    </data>
+</odoo>

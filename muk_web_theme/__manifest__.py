@@ -10,7 +10,7 @@
 ###################################################################################
 
 {
-    'name': 'MuK Backend Theme', 
+    'name': 'MUK Backend Theme', 
     'summary': 'Odoo Community Backend Theme',
     'version': '16.0.1.0.7',
     'category': 'Themes/Backend', 

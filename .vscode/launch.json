@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Python: Odoo16",
             "type": "debugpy",
@@ -18,6 +19,8 @@
                 // "db_training",
                 // "-u",
                 // "cdn_training",
+                "-u",
+                "om_hospital",
             ],
             "cwd": "C://Odoo//Odoo16//server//",
             "env": {},

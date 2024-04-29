@@ -35,8 +35,7 @@
                                         <field name="duration"/>
                                         <field name="seats"/>
                                     </tree>
-                                </field>
-                                
+                                </field>           
                             </page>
 
                             <page name="keterangan" string="Keterangan">

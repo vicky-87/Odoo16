@@ -49,12 +49,57 @@
                 </form>
             </field>
         </record>
+
+        <!-- instruktur kanban view -->
+        <record id="instruktur_view_kanban" model="ir.ui.view">
+            <field name="name">instruktur.view.kanban</field>
+            <field name="model">instruktur</field>
+            <field name="arch" type="xml">
+                <kanban string="Kanban Description">
+                    <!-- Add your fields here -->
+                    <field name="name" />
+                    <field name="street"/>
+                    <field name="mobile"/>
+                    <field name="email"/>
+                    <field name="keahlian_ids"/>
+                    <field name="image_256" />
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                            <t t-if="record.image_256.raw_value">
+                                <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image:url('#{kanban_image('instruktur','image_256', record.id.raw_value)}')"/>
+                                
+                            </t>
+                            <div class="oe_kanban_details">
+                                <h4>
+                                    <a type="open"><field name="name"/></a>
+                                </h4>
+                                <ul>
+                                    <li>
+                                        <span class="text-muted">Alamat</span> <field name="street"/>
+                                    </li>
+                                    <li>
+                                        <span class="text-muted">No. HP</span> <field name="mobile"/>
+                                    </li>
+                                    <li>
+                                        <span class="text-muted">Keahlian</span> <field name="keahlian_ids"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+                </kanban>
+            </field>
+        </record>
+
         <!-- instruktur action window -->
         <record id="instruktur_action" model="ir.actions.act_window">
             <field name="name">Instruktur Training</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">instruktur</field>
-                        <field name="view_mode">tree,form</field>
+                        <field name="view_mode">tree,form,kanban</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     <!-- Add Text Here -->

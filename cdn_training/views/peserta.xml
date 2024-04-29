@@ -105,7 +105,7 @@
                                         <span class="text-muted">Jenis Kelamin</span> <field name="jenis_kel"/>
                                     </li>
                                     <li>
-                                        <span class="text-muted">No HP</span> <field name="mobile"/>
+                                        <span class="text-muted">No. HP</span> <field name="mobile"/>
                                     </li>
                                     <li>
                                         <span class="text-muted">Tanggal Lahir</span> <field name="tgl_lahir"/>

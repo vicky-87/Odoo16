@@ -33,10 +33,16 @@
                             <group>
                                 <field name="ref" />
                                 <field name="gender" />
-                                <!-- <field name="active" invisinle="1"/> -->
+                                <field name="active" invisinle="1"/>
                             </group>
                         </group>
-                        </sheet>
+                    </sheet>
+                    <!-- add oe_chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids" />
+                        <field name="message_ids" />
+                    </div>
                 </form>
             </field>
         </record>

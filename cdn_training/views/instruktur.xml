@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="jabatan_id"/>
                     <field name="street"/>
                     <field name="mobile"/>
                     <field name="email"/>
@@ -34,6 +35,13 @@
                                 <field name="keahlian_ids" widget="many2many_tags"/>
                             </group>
                         </group>
+
+                        <group name="jabatan" string="Jabatan Instruktur">
+                            <group>
+                                <field name="jabatan_id"/>
+                                
+                            </group>
+                        </group>          
                   
                         <group name="alamat" string="Alamat Instruktur">
                             <group>
@@ -45,6 +53,7 @@
                                 <field name="desa_id" domain="[('kecamatan_id','=',kecamatan_id)]"/>
                             </group>
                         </group>          
+
                     </sheet>
                 </form>
             </field>
@@ -99,7 +108,7 @@
             <field name="name">Instruktur Training</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">instruktur</field>
-                        <field name="view_mode">tree,form,kanban</field>
+            <field name="view_mode">tree,form,kanban</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     <!-- Add Text Here -->

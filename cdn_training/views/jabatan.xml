@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- jabatan tree view -->
+        <record id="jabatan_view_tree" model="ir.ui.view">
+            <field name="name">jabatan.view.tree</field>
+            <field name="model">jabatan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name" />
+                    <field name="jenis_jabatan" />
+                    <field name="keterangan" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- jabatan form view -->
+        <record id="jabatan_view_form" model="ir.ui.view">
+            <field name="name">jabatan.view.form</field>
+            <field name="model">jabatan</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="name" />
+                            <field name="jenis_jabatan" />
+                            <field name="keterangan" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!-- jabatan action window -->
+        <record id="jabatan_action" model="ir.actions.act_window">
+            <field name="name">Data Jabatan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">jabatan</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                
+                </p>
+            </field>
+        </record>
+    
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="jabatan_menu_act" name="Jabatan" parent="pengaturan_menu_categ" action="jabatan_action" sequence="25"/>
+    </data>
+    
+</odoo>

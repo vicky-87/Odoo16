@@ -37,7 +37,9 @@
         'views/kecamatan.xml',
         'views/desa.xml',
         'views/peserta.xml',
+        'views/jabatan.xml',
         'wizards/training_wizard.xml',
+        # 'wizards/instruktur_wizard.xml',
 
 
     ],

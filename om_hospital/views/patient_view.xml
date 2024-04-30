@@ -3,14 +3,15 @@
     <data> 
 
         <!-- view.hospital.patien.view -->
-        <record id="view.hospital.patient.tree" model="ir.ui.view">
+        <record id="view_hospital_patient_tree" model="ir.ui.view">
             <field name="name">view.hospital.patient.tree</field>
             <field name="model">hospital.patient</field>
             <field name="arch" type="xml">
                 <tree>
                     <!-- Add your fields here -->
-                     <field name="name" string="Patient Name"/>
+                    <field name="name" string="Patient Name"/>
                     <field name="age" />
+                    <field name="ref" />
                     <field name="gender" />
                 </tree>
             </field>
@@ -30,11 +31,34 @@
                                 <field name="age" />
                             </group>
                             <group>
+                                <field name="ref" />
                                 <field name="gender" />
                             </group>
                         </group>
                         </sheet>
                 </form>
+            </field>
+        </record>
+
+        <!-- view.hospital.patien.view search -->
+        <record id="view_hospital_patient_search" model="ir.ui.view">
+            <field name="name">view.hospital.patient.search</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <search>
+                    <!-- Add your fields here -->
+                    <field name="name" string="Patient Name" filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike', self )]"/>
+                    <field name="ref"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <filter name="filter_male" string="Male" domain="[('gender', '=', 'male')]" />
+                    <filter name="filter_female" string="Female" domain="[('gender', '=', 'female')]" />
+                    <separator/>
+                    <filter name="filter_kids" string="Kids" domain="[('age', '&lt;=', 5)]" />
+                    <group>
+                        <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}" />
+                    </group>
+                </search>
             </field>
         </record>
 
@@ -51,6 +75,7 @@
                 </p>
             </field>
         </record>
+
         <menuitem
             id="menu_patient"
             name="Patient"

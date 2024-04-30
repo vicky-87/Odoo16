@@ -11,6 +11,7 @@
                     <field name="name"/>
                     <field name="start_date"/>
                     <field name="duration"/>
+                    <field name="end_date"/>
                     <field name="seats"/>
                     <field name="instruktur_id"/>
                     <field name="no_hp"/>
@@ -37,6 +38,7 @@
                                     <field name="name" attrs="{'readonly' : [('state','!=','draft')]}"/>
                                     <field name="start_date" attrs="{'readonly' : [('state','!=','draft')]}"/>
                                     <field name="duration" attrs="{'readonly' : [('state','!=','draft')]}"/>
+                                    <field name="end_date" attrs="{'readonly' : [('state','!=','draft')]}"/>
                                 </group> 
                                 <group>
                                     <field name="seats" attrs="{'readonly' : [('state','!=','draft')]}"/>

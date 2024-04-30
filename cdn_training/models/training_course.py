@@ -1,6 +1,5 @@
 from odoo import models, fields, api
-
-
+from datetime import timedelta
 
 class TrainingCourse(models.Model):
     _name = 'training.course'
@@ -25,6 +24,7 @@ class TrainingSession(models.Model):
     name = fields.Char(string='Sesi Training', required=True, tracking=True)
     course_id = fields.Many2one(comodel_name='training.course', string='ID Kursus', required=True, tracking=True)
     start_date = fields.Date(string='Tanggal Mulai', required=True, tracking=True)
+    end_date = fields.Date(string='Tanggal Selesai', compute="_end_date")
     duration = fields.Float(string='Durasi', required=True, tracking=True)
     seats = fields.Integer(string='Max Peserta', required=True, default=1, tracking=True)
     instruktur_id = fields.Many2one(comodel_name='instruktur', string='Nama Instruktur', tracking=True)
@@ -50,3 +50,13 @@ class TrainingSession(models.Model):
 
     def action_draft(self):
         self.state = 'draft'
+    
+    @api.depends('start_date','duration')
+    def _end_date(self):
+        for rec in self:
+            if rec.start_date and rec.duration:
+                start_date = fields.Date.from_string(rec.start_date)
+                end_date = start_date + timedelta(days=rec.duration)
+                rec.end_date = fields.Date.to_string(end_date)
+            else:
+                rec.end_date = False

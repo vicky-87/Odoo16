@@ -33,7 +33,7 @@
                             <group>
                                 <field name="ref" />
                                 <field name="gender" />
-                                <field name="active" invisinle="1"/>
+                                <!-- <field name="active" invisinle="1"/> -->
                             </group>
                         </group>
                         </sheet>

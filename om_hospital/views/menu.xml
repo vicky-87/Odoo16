@@ -16,12 +16,11 @@
             parent="menu_hospital_root"
             sequence="0"/>
 
-        <!-- <menuitem
-            id="menu_patient"
-            name="Patient"
-            action="action_hospital_patient"
-            sequence="0"/> -->
-
+        <menuitem
+            id="menu_appointment_master"
+            name="Appointments"
+            parent="menu_hospital_root"
+            sequence="0"/>
     </data>    
 
 </odoo>

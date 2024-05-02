@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- instruktur.wizard form view -->
+        <record id="jabatan_wizard_view_form" model="ir.ui.view">
+            <field name="name">jabatan.wizard.view.form</field>
+            <field name="model">jabatan.wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="jabatan_id" />
+                            <field name="pejabat_id" />
+                        </group>
+                        <footer>
+                            <button name="update_jabatan" string="Update Jabatan" type="object" confirm="Apakah Anda yakin akan menambah Jabatan ini?" class="btn-primary"/>
+                            <button string="Batal" class="btn-secondary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+        <!-- istruktur.wizard action window -->
+        <record id="jabatan_wizard_action" model="ir.actions.act_window">
+            <field name="name">Update Jabatan</field>
+            <field name="res_model">jabatan.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <!-- <field name="binding_model_id" ref="model_instruktur"/>
+            <field name="binding_view_types">form</field> -->
+        </record>
+            <menuitem id="jabatan_wiz_menu_act" name="Update Jabatan" parent="training_menu_root" action="jabatan_wizard_action" sequence="45"/>
+    </data>
+</odoo>

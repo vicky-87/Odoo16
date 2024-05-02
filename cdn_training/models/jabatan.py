@@ -23,4 +23,3 @@ class Jabatan(models.Model):
                 if len(existing_wakil) > 1 or (len(existing_wakil) == 1 and existing_wakil.id != record.id):
                     raise ValidationError("Hanya boleh ada satu Wakil Kepala Lembaga Saja!")
     
-    

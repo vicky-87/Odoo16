@@ -11,6 +11,7 @@
                     <field name="name" />
                     <field name="jenis_jabatan" />
                     <field name="keterangan" />
+                    <field name="pejabat" />
                 </tree>
             </field>
         </record>
@@ -27,6 +28,7 @@
                             <field name="name" />
                             <field name="jenis_jabatan" />
                             <field name="keterangan" />
+                            <field name="pejabat" />
                         </group>
                     </sheet>
                 </form>

@@ -11,6 +11,10 @@ class Instruktur(models.Model):
     jabatan_staff = fields.Char(string='Jabatan Staff')
     jenis_jabatan = fields.Selection(string='Jenis Jabatan', related='jabatan_id.jenis_jabatan')
     
+    def action_update_jabatan(self):
+        self.jabatan_id.pejabat = self.id
+        return True
+
 class Keahlian(models.Model):
     _name           = 'keahlian'
     _description    = 'Keahlian'

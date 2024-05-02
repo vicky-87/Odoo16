@@ -22,7 +22,11 @@
             <field name="model">instruktur</field>
             <field name="arch" type="xml">
                 <form string="">
+                 <header>
+                    <button string="Update Jabatan" states="" name="action_update_jabatan" type="object" class="oe_highlight"/>
+                </header>
                     <sheet>
+                    <field name="image_1920" widget="image" class="oe_avatar"/>
                         <group name="identitas" string="Identitas Struktur"> 
                             <group>
                                 <field name="name"/>
@@ -39,7 +43,10 @@
                         <group name="jabatan" string="Jabatan Instruktur">
                             <group>
                                 <field name="jabatan_id"/>
-                                
+                            </group>
+                            <group>
+                                <field name="jenis_jabatan" attrs="{'invisible':True}"/>
+                                <field name="jabatan_staff" attrs="{'invisible':[('jenis_jabatan','!=','3')]}"/>
                             </group>
                         </group>          
                   

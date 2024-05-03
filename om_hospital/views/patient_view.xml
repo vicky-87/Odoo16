@@ -28,6 +28,7 @@
                             <group>
                                 <!-- Add your fields here -->
                                 <field name="name" />
+                                <field name="date_of_birth" />
                                 <field name="age" />
                             </group>
                             <group>
@@ -60,8 +61,8 @@
                     <field name="gender"/>
                     <filter name="filter_male" string="Male" domain="[('gender', '=', 'male')]" />
                     <filter name="filter_female" string="Female" domain="[('gender', '=', 'female')]" />
-                    <separator/>
-                    <filter name="filter_kids" string="Kids" domain="[('age', '&lt;=', 5)]" />
+                    <!-- <separator/>
+                    <filter name="filter_kids" string="Kids" domain="[('age', '&lt;=', 5)]" /> -->
                     <separator/>
                     <filter name="filter_archive" string="Archived" domain="[('active', '=', False)]" />
                     <group expand="0" string="Group By">

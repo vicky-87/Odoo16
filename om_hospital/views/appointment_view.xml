@@ -10,6 +10,7 @@
                 <tree>
                     <!-- Add your fields here -->
                     <field name="patient_id" />
+                    <field name="gender" />
                     <field name="appointment_time" />
                     <field name="booking_date" />
                 </tree>
@@ -26,8 +27,11 @@
                         <group>
                             <!-- Add your fields here -->
                             <field name="patient_id" />
-                            <field name="appointment_time" />
+                            <field name="gender" />
                             <field name="booking_date" />
+                        </group>
+                        <group>
+                            <field name="appointment_time" />
                         </group>
                     </sheet>
                      <div class="oe_chatter">

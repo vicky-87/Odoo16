@@ -15,11 +15,10 @@ class HospitalAppointment(models.Model):
     prescription = fields.Html(string='Prescription')
     
     priority = fields.Selection([
-        ('0', 'Normal')
-        ('1', 'Low')
-        ('2', 'High')
-        ('3', 'Very High')
-    ], string='Priority')
+        ('0', 'Normal'),
+        ('1', 'Low'),
+        ('2', 'High'),
+        ('3', 'Very High')], string='Priority')
     # help='Gives the sequence order when displaying a list of MRP documents.')
 
     @api.onchange('patient.id')

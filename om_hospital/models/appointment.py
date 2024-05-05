@@ -13,6 +13,14 @@ class HospitalAppointment(models.Model):
     booking_date = fields.Date(string='Booking Date', default=fields.Date.context_today)
     ref = fields.Char(string='Reference')
     prescription = fields.Html(string='Prescription')
+    
+    priority = fields.Selection([
+        ('0', 'Normal')
+        ('1', 'Low')
+        ('2', 'High')
+        ('3', 'Very High')
+    ], string='Priority')
+    # help='Gives the sequence order when displaying a list of MRP documents.')
 
     @api.onchange('patient.id')
     def onchange_patient_id(self):

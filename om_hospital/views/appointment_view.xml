@@ -39,7 +39,7 @@
                         </group>
                         <notebook>
                             <page name="prescription" string="Prescription">
-                                
+                                <field name="prescription" placeolder="Enter your Prescription"/>
                             </page>
                             <page name="pharmacy" string="Pharmacy">
                                 

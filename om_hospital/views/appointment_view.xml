@@ -41,8 +41,6 @@
                             <page name="prescription" string="Prescription">
                                 
                             </page>
-                        </notebook>
-                        <notebook>
                             <page name="pharmacy" string="Pharmacy">
                                 
                             </page>

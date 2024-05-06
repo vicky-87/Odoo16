@@ -18,10 +18,10 @@
                          decoration-warning="state == 'in_consultation'">
                     <!-- Add your fields here -->
                     <field name="patient_id" />
-                    <field name="ref" />
-                    <field name="gender" />
+                    <field name="ref" optional="show"/>
+                    <field name="gender" optional="hide"/>
                     <field name="appointment_time" />
-                    <field name="booking_date" />
+                    <field name="booking_date" optional="show"/>
                     <field name="activity_ids" widget="list_activity"/>
                     <field name="state" 
                             decoration-success="state == 'done'"

@@ -40,14 +40,16 @@
                                 <field name="patient_id" />
                                 <field name="ref" />
                                 <field name="gender" />
-                                <field name="booking_date" />
+                                <field name="booking_date" help="Date of booking"/>
                             </group>
                             <group>
                                 <field name="appointment_time" />
                                 <button name="action_test" string="Object Button" 
-                                        confirm="Are you sure toexecute python code ?"
+                                        help="A message will be printed in the log "
+                                        confirm="Are you sure to execute python code ?"
                                         type="object" class="oe_highlight"/>
                                 <button name="%(om_hospital.action_hospital_appointment)d" string="Action Button" 
+                                        help="On clicking this button, you will be redirected to patient records"
                                         confirm="Are you sure to open the patient action ?"
                                         type="action" class="oe_highlight"/>
                             </group>

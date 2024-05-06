@@ -25,4 +25,4 @@ class HospitalPatient(models.Model):
                 # print("rec", rec, rec.name, rec.date_of_birth.year)
                 rec.age = today.year - rec.date_of_birth.year
             else:
-                rec.age = 0
+                rec.age = 1

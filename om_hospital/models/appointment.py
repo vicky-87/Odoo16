@@ -20,7 +20,7 @@ class HospitalAppointment(models.Model):
         ('3', 'Very High')], string='Priority')
     state = fields.Selection([
         ('draft', 'Draft'),
-        ('in_consultation', 'In Coslsultation'),
+        ('in_consultation', 'In Conlsultation'),
         ('done', 'Done'),
         ('cancel', 'Cancelled')], default='draft', string='Status', required=True)
 

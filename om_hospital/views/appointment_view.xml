@@ -12,7 +12,10 @@
             <field name="name">hospital.appointment.tree</field>
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
-                <tree create="0" delete="0" >
+                <tree   decoration-success="state == 'done'"
+                        decoration-info="state == 'draft'"
+                        decoration-danger="state == 'cancel'"
+                         decoration-warning="state == 'in_consultation'">
                     <!-- Add your fields here -->
                     <field name="patient_id" />
                     <field name="ref" />
@@ -37,7 +40,7 @@
                 <form create="0" delete="0" edit="0">
                     <header>
                         <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}"
-                        statusbar_visible="draft,in_consultation,done"/>
+                        statusbar_visible="draft,in_consultation,done,cancel"/>
                     </header>
                     <sheet>
                         <div>

@@ -24,6 +24,10 @@
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
                 <form create="0" delete="0" edit="0">
+                    <header>
+                        <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}"
+                        statusbar_visible="draft,in_consulation,done"/>
+                    </header>
                     <sheet>
                         <div>
                             <h2>

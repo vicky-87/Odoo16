@@ -28,6 +28,12 @@ class HospitalAppointment(models.Model):
     def onchange_patient_id(self):
         self.ref = self.patient_id.ref
 
-    # @api.onchange('')
     def action_test(self):
         print("Button Clicked!!!!!!!")
+        return {
+            'effect': {
+                'fadeout': 'slow',
+                'message': 'Click Succesfull',
+                'type' : 'rainbow_man',
+            } 
+        }

@@ -42,7 +42,7 @@
                 <form create="0" delete="0" edit="0">
                     <header>
                         <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}"
-                        statusbar_visible="draft,in_consultation,done,cancel"/>
+                        statusbar_visible="draft,in_consultation,done"/>
                     </header>
                     <sheet>
                         <div>
@@ -73,7 +73,8 @@
                         </group>
                         <notebook>
                             <page name="prescription" string="Prescription">
-                                <field name="prescription" placeolder="Enter your Prescription"/>
+                                <field name="prescription" placeolder="Enter your Prescription"
+                                    options="{'collaborative': true}" />
                             </page>
                             <page name="pharmacy" string="Pharmacy">
                                 

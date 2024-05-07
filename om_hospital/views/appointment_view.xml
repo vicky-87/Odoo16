@@ -68,8 +68,9 @@
                                 <field name="doctor_id" widget="many2one_avatar"/>
                                 <field name="booking_date" help="Date of booking" default_focus="1"/>
                             </group>
+                            <!-- fungsi groups base:kalau mode developer tidak akan muncul buttonnya-->
                             <group>
-                                <field name="hide_sales_price" groups="base.group_no_one"/>   
+                                <field name="hide_sales_price"/>   
                                 <field name="appointment_time" />
                                 <button name="action_test" string="Object Button" 
                                         help="A message will be printed in the log "

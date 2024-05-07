@@ -74,7 +74,7 @@
                         <notebook>
                             <page name="prescription" string="Prescription">
                                 <field name="prescription" placeolder="Enter your Prescription"
-                                    options="{'collaborative': true}" />
+                                    options="{'collaborative': true, 'resizable': true}" />
                             </page>
                             <page name="pharmacy" string="Pharmacy">
                                 

@@ -170,6 +170,6 @@
                 name="Appointments"
                 action="action_hospital_appointment"
                 parent="menu_appointment_master"
-                sequence="1"/>
+                sequence="10"/>
     </data>
 </odoo>

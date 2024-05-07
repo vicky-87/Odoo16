@@ -3,3 +3,4 @@ access.hospital.patient,access.hospital.patient,model_hospital_patient,base.grou
 access.hospital.appointment,access.hospital.appointment,om_hospital.model_hospital_appointment,base.group_user,1,1,1,1
 access.appointment.pharmacy.lines,access.appointment.pharmacy.lines,om_hospital.model_appointment_pharmacy_lines,base.group_user,1,1,1,1
 access.patient.tag,access.patient.tag,om_hospital.model_patient_tag,base.group_user,1,1,1,1
+access.cancel.appointment.wizard,access.cancel.appointment.wizard,om_hospital.model_cancel_appointment_wizard,base.group_user,1,1,1,1

@@ -108,7 +108,7 @@
                         <notebook>
                             <page name="prescription" string="Prescription">
                                 <field name="prescription" placeolder="Enter your Prescription"
-                                    options="{'collaborative': true, 'resizable': true}" />
+                                    options="{'collaborative': true, 'resizable': true, 'codeview':true}" />
                             </page>
                             <page name="pharmacy" string="Pharmacy">
                                 <field name="pharmacy_line_ids">

@@ -15,7 +15,7 @@
                 <tree   decoration-success="state == 'done'"
                         decoration-info="state == 'draft'"
                         decoration-danger="state == 'cancel'"
-                         decoration-warning="state == 'in_consultation'" sample="1" multi_edit="1">
+                        decoration-warning="state == 'in_consultation'" sample="1" multi_edit="1">
                     <!-- Add your fields here -->
                     <field name="patient_id" />
                     <field name="ref" optional="show"/>
@@ -41,7 +41,12 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}"
+                    <button string="In Colsultation" name="action_in_consultation" type="object" class="oe_highlight" states="draft"/>
+                    <button string="Mark As Done" name="action_done" type="object" class="oe_highlight" states="in_consultation"/>
+                    <button string="Cancel" name="action_cancel" type="object" states="draft,in_consultation"/>
+                    <button string="Reset To Draf" name="action_draft" type="object" states="done"/>
+                        <!-- options="{'clickable':'1'}"  -->
+                        <field name="state" widget="statusbar" nolabel="1" 
                         statusbar_visible="draft,in_consultation,done"/>
                     </header>
                     <sheet>

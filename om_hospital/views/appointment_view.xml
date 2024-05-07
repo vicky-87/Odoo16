@@ -15,7 +15,7 @@
                 <tree   decoration-success="state == 'done'"
                         decoration-info="state == 'draft'"
                         decoration-danger="state == 'cancel'"
-                         decoration-warning="state == 'in_consultation'" sample="1">
+                         decoration-warning="state == 'in_consultation'" sample="1" multi_edit="1">
                     <!-- Add your fields here -->
                     <field name="patient_id" />
                     <field name="ref" optional="show"/>

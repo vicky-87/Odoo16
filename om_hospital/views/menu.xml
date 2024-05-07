@@ -20,7 +20,13 @@
             id="menu_appointment_master"
             name="Appointments"
             parent="menu_hospital_root"
-            sequence="0"/>
+            sequence="10"/>
+        
+        <menuitem
+            id="menu_configuration"
+            name="Configurations"
+            parent="menu_hospital_root"
+            sequence="20"/>
     </data>    
 
 </odoo>

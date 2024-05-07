@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+    <!-- view_patient_tag_tree tree view -->
+    <record id="view_patient_tag_tree" model="ir.ui.view">
+        <field name="name">patient.tag.tree</field>
+        <field name="model">patient.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="active" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- vie_patient_tag_form view -->
+    <record id="view_patient_tag_form" model="ir.ui.view">
+        <field name="name">patient.tag.form</field>
+        <field name="model">patient.tag</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="active" widget="boolean_toggle" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+        
+    <!-- action_patient_tag window -->
+    <record id="action_patient_tag" model="ir.actions.act_window">
+        <field name="name">Patient Tags</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">patient.tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_patient_tag"
+            name="Tags"
+            action="action_patient_tag"
+            parent="menu_configuration"
+            sequence="10"/>
+    </data>
+</odoo>

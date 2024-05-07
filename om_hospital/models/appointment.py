@@ -50,8 +50,8 @@ class HospitalAppointment(models.Model):
             rec.state = 'done'
 
     def action_cancel(self):
-        for rec in self:
-            rec.state = 'cancel'
+        action = self.env.reff('om_hospital.action_cancel_appointment').read()(0)
+        return action
 
     def action_draft(self):
         for rec in self:

@@ -9,6 +9,7 @@
             <tree>
                 <!-- Add your fields here -->
                 <field name="name" />
+                <field name="color" widget="color_picker" />
                 <field name="active" />
             </tree>
         </field>
@@ -26,6 +27,7 @@
                             <field name="name" />
                         </group>
                         <group>
+                            <field name="color" widget="color_picker" />
                             <field name="active" widget="boolean_toggle" />
                         </group>
                     </group>

@@ -9,7 +9,8 @@ class TrainingCourse(models.Model):
     keterangan = fields.Text(string='Keterangan')    
     user_id = fields.Many2one(comodel_name='res.users', string='Penanggung Jawab')
     session_line = fields.One2many(comodel_name ='training.session', inverse_name = 'course_id', string='Sesi Training')
-    
+    product_ids = fields.Many2many(comodel_name = 'product.product', string='Peralatan/Konsumsi', domain=[('product_training','!=','non_training')])
+
     # cara membuat constraint ocoof
     _sql_constraints = [
         ('name_course_uniwue', 'UNIQUE(name)', 'Nama Kursus sudah ada!')
@@ -35,7 +36,6 @@ class TrainingSession(models.Model):
     peserta_ids = fields.Many2many(comodel_name='peserta', string='Peserta', tracking=True)
     jml_peserta = fields.Integer(compute='_compute_jml_peserta', string='Jumlah Peserta', tracking=True)
     state = fields.Selection(string='Status', selection=[('draft', 'Draft'), ('progress', 'Sedang Berlangsung'), ('done', 'Selesai')], default="draft", tracking=True)
-    
     
     @api.depends('peserta_ids')
     def _compute_jml_peserta(self):

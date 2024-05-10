@@ -43,6 +43,15 @@
                                     <field name="keterangan"/>
                                 </group>
                             </page>
+                            <page name="training_kit" string="Konsumsi/Training Kit">
+                                <field name="product_ids">
+                                    <tree editable="bottom">
+                                        <field name="name" />
+                                        <field name="product_training" />
+                                        <field name="lst_price" />
+                                    </tree>
+                                </field>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>

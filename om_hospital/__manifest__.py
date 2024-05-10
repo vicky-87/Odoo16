@@ -3,7 +3,7 @@
     'name': "Hospital Management",
 
     'summary': """
-        Hospital Management System""",
+        Membuat Module OM Hospital""",
 
     'description': """
         Hospital Management System

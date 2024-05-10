@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- res.partner.training inherit form view -->
+        <record id="res_partner_training_inherit" model="ir.ui.view">
+            <field name="name">res.partner.training.inherit.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- cara menghilangkan group pada penjualan -->
+                <xpath expr="//group[@name='sale']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- res.partner.training inherit form view -->
+        <record id="res_partner_jekel_inherit" model="ir.ui.view">
+            <field name="name">res.partner.jekel.inherit.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_id_efaktur.res_partner_tax_form_view"/>
+            <field name="arch" type="xml">
+                <!-- Add your xpath here -->
+                <!-- <field name="l10n_id_pkp" position="after">
+                    <field name="jenis_kel" />
+                </field> -->
+                <xpath expr="//field[@name='l10n_id_pkp']" position="after">
+                    <field name="jenis_kel" />
+                </xpath>
+            </field>
+        </record>
+    
+    </data>
+</odoo>

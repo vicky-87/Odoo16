@@ -1,0 +1,100 @@
+<odoo>
+    <data>
+        <record id="technology_1" model="sis_module.technologies">
+            <field name="name">Google Docs</field>
+            <field name="utility">Google Docs allows users to create and edit documents online while collaborating with other users in real time. Edits are tracked by the user making the edit, with a revision history presenting changes. An editor's position is highlighted with an editor-specific color and cursor, and a permissions system regulates what users can do. Updates have introduced features using machine learning, including "Explore", offering search results based on the contents of a document, and "Action items", allowing users to assign tasks to other users.</field>
+            <field name="logo" type="base64" file="/mnt/extra-addons/sis_module/demo/images/GoogleDocs.png"/>
+            <field name="resource">https://www.google.com/docs/about/</field>
+        </record>
+
+        <record id="technology_2" model="sis_module.technologies">
+            <field name="name">Google Drive</field>
+            <field name="utility">Google Drive is a file storage and synchronization service developed by Google. Launched on April 24, 2012, Google Drive allows users to store files in the cloud (on Google's servers), synchronize files across devices, and share files. In addition to a web interface, Google Drive offers apps with offline capabilities for Windows and macOS computers, and Android and iOS smartphones and tablets. Google Drive encompasses Google Docs, Google Sheets, and Google Slides, which are a part of the Google Docs Editors office suite that permits collaborative editing of documents, spreadsheets, presentations, drawings, forms, and more. Files created and edited through the Google Docs suite are saved in Google Drive.</field>
+            <field name="logo" type="base64" file="/mnt/extra-addons/sis_module/demo/images/GoogleDrive.png"/>
+            <field name="resource">https://www.google.com/intl/en/drive/</field>
+        </record>
+
+        <record id="technology_3" model="sis_module.technologies">
+            <field name="name">Google Slides</field>
+            <field name="utility"> Google Slides is a presentation program included as part of the free, web-based Google Docs Editors suite offered by Google. The service also includes: Google Docs, Google Sheets, Google Drawings, Google Forms, Google Sites and Google Keep. Google Slides is available as a web application, mobile app for: Android, iOS, Microsoft Windows, BlackBerry OS and as a desktop application on Google's ChromeOS. The app is compatible with Microsoft PowerPoint file formats. The app allows users to create and edit files online while collaborating with other users in real-time. Edits are tracked by a user with a revision history presenting changes. An editor's position is highlighted with an editor-specific color and cursor and a permissions system regulates what users can do.</field>
+            <field name="logo" type="base64" file="/mnt/extra-addons/sis_module/demo/images/GoogleSlides.png"/>
+            <field name="resource">https://www.google.com/sheets/about/</field>
+        </record>
+
+        <record id="vulnerability_1" model="sis_module.vulnerabilities">
+            <field name="cveId">CVE-2021-36751</field>
+            <field name="cvss">6.4</field>
+            <field name="summary">ENC DataVault 7.1.1W uses an inappropriate encryption algorithm, such that an attacker (who does not know the secret key) can make ciphertext modifications that are reflected in modified plaintext. There is no data integrity mechanism. (This behavior occurs across USB drives sold under multiple brand names.)</field>
+            <field name="published">2022-01-02 16:15:00</field>
+            <field name="lastUpdated">2022-11-25 05:15:00</field>
+            <field name="risking" eval="[ref('sis_module.technology_1')]"/>
+        </record>
+
+        <record id="vulnerability_2" model="sis_module.vulnerabilities">
+            <field name="cveId">CVE-2021-20610</field>
+            <field name="cvss">7.8</field>
+            <field name="summary">Improper Handling of Length Parameter Inconsistency vulnerability in Mitsubishi Electric MELSEC iQ-R Series R00/01/02CPU Firmware versions "24" and prior, Mitsubishi Electric MELSEC iQ-R Series R04/08/16/32/120(EN)CPU Firmware versions "57" and prior, Mitsubishi Electric MELSEC iQ-R Series R08/16/32/120SFCPU Firmware versions "28" and prior, Mitsubishi Electric MELSEC iQ-R Series R08/16/32/120PCPU Firmware versions "29" and prior, Mitsubishi Electric MELSEC iQ-R Series R08/16/32/120PSFCPU Firmware versions "08" and prior, Mitsubishi Electric MELSEC iQ-R Series R16/32/64MTCPU Operating system software version "23" and prior, Mitsubishi Electric MELSEC iQ-R Series R12CCPU-V Firmware versions "16" and prior, Mitsubishi Electric MELSEC Q Series Q03UDECPU The first 5 digits of serial No. "23121" and prior, Mitsubishi Electric MELSEC Q Series Q04/06/10/13/20/26/50/100UDEHCPU The first 5 digits of serial No. "23121" and prior, Mitsubishi Electric MELSEC Q Series Q03/04/06/13/26UDVCPU The first 5 digits of serial No. "23071" and prior, Mitsubishi Electric MELSEC Q Series Q04/06/13/26UDPVCPU The first 5 digits of serial No. "23071" and prior, Mitsubishi Electric MELSEC Q Series Q12DCCPU-V The first 5 digits of serial No. "24031" and prior, Mitsubishi Electric MELSEC Q Series Q24DHCCPU-V(G) The first 5 digits of serial No. "24031" and prior, Mitsubishi Electric MELSEC Q Series Q24/26DHCCPU-LS The first 5 digits of serial No. "24031" and prior, Mitsubishi Electric MELSEC Q Series MR-MQ100 Operating system software version "F" and prior, Mitsubishi Electric MELSEC Q Series Q172/173DCPU-S1 Operating system software version "W" and prior, Mitsubishi Electric MELSEC Q Series Q172/173DSCPU All versions, Mitsubishi Electric MELSEC Q Series Q170MCPU Operating system software version "W" and prior, Mitsubishi Electric MELSEC Q Series Q170MSCPU(-S1) All versions, Mitsubishi Electric MELSEC L Series L02/06/26CPU(-P) The first 5 digits of serial No. "23121" and prior, Mitsubishi Electric MELSEC L Series L26CPU-(P)BT The first 5 digits of serial No. "23121" and prior and Mitsubishi Electric MELIPC Series MI5122-VW Firmware versions "05" and prior allows a remote unauthenticated attacker to cause a denial-of-service (DoS) condition by sending specially crafted packets. System reset is required for recovery.</field>
+            <field name="published">2022-12-01 16:15:00</field>
+            <field name="lastUpdated">2022-11-25 03:15:00</field>
+            <field name="risking" eval="[ref('sis_module.technology_2')]"/>
+        </record>
+
+        <record id="vulnerability_3" model="sis_module.vulnerabilities">
+            <field name="cveId">CVE-2021-20611</field>
+            <field name="cvss">7.8</field>
+            <field name="summary">Improper Input Validation vulnerability in Mitsubishi Electric MELSEC iQ-R Series R00/01/02CPU Firmware versions "24" and prior, Mitsubishi Electric MELSEC iQ-R Series R04/08/16/32/120(EN)CPU Firmware versions "57" and prior, Mitsubishi Electric MELSEC iQ-R Series R08/16/32/120SFCPU Firmware versions "28" and prior, Mitsubishi Electric MELSEC iQ-R Series R08/16/32/120PCPU Firmware versions "29" and prior, Mitsubishi Electric MELSEC iQ-R Series R08/16/32/120PSFCPU Firmware versions "08" and prior, Mitsubishi Electric MELSEC iQ-R Series R16/32/64MTCPU Operating system software version "23" and prior, Mitsubishi Electric MELSEC iQ-R Series R12CCPU-V Firmware versions "16" and prior, Mitsubishi Electric MELSEC Q Series Q03UDECPU The first 5 digits of serial No. "23121" and prior, Mitsubishi Electric MELSEC Q Series Q04/06/10/13/20/26/50/100UDEHCPU The first 5 digits of serial No. "23121" and prior, Mitsubishi Electric MELSEC Q Series Q03/04/06/13/26UDVCPU The first 5 digits of serial No. "23071" and prior, Mitsubishi Electric MELSEC Q Series Q04/06/13/26UDPVCPU The first 5 digits of serial No. "23071" and prior, Mitsubishi Electric MELSEC Q Series Q12DCCPU-V The first 5 digits of serial No. "24031" and prior, Mitsubishi Electric MELSEC Q Series Q24DHCCPU-V(G) The first 5 digits of serial No. "24031" and prior, Mitsubishi Electric MELSEC Q Series Q24/26DHCCPU-LS The first 5 digits of serial No. "24031" and prior, Mitsubishi Electric MELSEC Q Series MR-MQ100 Operating system software version "F" and prior, Mitsubishi Electric MELSEC Q Series Q172/173DCPU-S1 Operating system software version "W" and prior, Mitsubishi Electric MELSEC Q Series Q172/173DSCPU All versions, Mitsubishi Electric MELSEC Q Series Q170MCPU Operating system software version "W" and prior, Mitsubishi Electric MELSEC Q Series Q170MSCPU(-S1) All versions, Mitsubishi Electric MELSEC L Series L02/06/26CPU(-P) The first 5 digits of serial No. "23121" and prior, Mitsubishi Electric MELSEC L Series L26CPU-(P)BT The first 5 digits of serial No. "23121" and prior and Mitsubishi Electric MELIPC Series MI5122-VW Firmware versions "05" and prior allows a remote unauthenticated attacker to cause a denial-of-service (DoS) condition by sending specially crafted packets. System reset is required for recovery.</field>
+            <field name="published">2022-12-01 16:15:00</field>
+            <field name="lastUpdated">2022-11-25 03:15:00</field>
+            <field name="risking" eval="[ref('sis_module.technology_2')]"/>
+        </record>
+
+        <record id="client_1" model="sis_module.clients">
+            <field name="name">GoTo</field>
+            <field name="outline">GoTo Group adalah ekosistem digital terbesar di Indonesia. Misi GoTo adalah untuk "mendorong kemajuan" dengan menawarkan infrastruktur teknologi dan solusi bagi semua orang untuk mengakses dan berkembang dalam ekonomi digital. Ekosistem GoTo terdiri dari layanan transportasi on-demand, e-commerce, pengiriman makanan dan bahan makanan, logistik dan pemenuhan, serta layanan keuangan dan pembayaran melalui platform Gojek, Tokopedia, dan GoTo Financial.</field>
+            <field name="industry">enterprise</field>
+            <field name="logo" type="base64" file="/mnt/extra-addons/sis_module/demo/images/GoTo.png"/>
+            <field name="phoneNumber">+622187952355</field>
+        </record>
+
+        <record id="client_2" model="sis_module.clients">
+            <field name="name">Grab</field>
+            <field name="outline">Grab adalah superapp terdepan Asia Tenggara dengan layanan sehari-hari seperti pengiriman, tranportasi, finansial, dan banyak lagi.</field>
+            <field name="industry">enterprise</field>
+            <field name="logo" type="base64" file="/mnt/extra-addons/sis_module/demo/images/Grab.png"/>
+            <field name="phoneNumber">+622518348947</field>
+        </record>
+
+        <record id="client_3" model="sis_module.clients">
+            <field name="name">HappyFresh</field>
+            <field name="outline">HappyFresh adalah portal layanan belanja kebutuhan rumah online untukmu. Ucapkan selamat tinggal ke antrian panjang, toko yang padat, dan kemacetan!</field>
+            <field name="industry">corporate</field>
+            <field name="logo" type="base64" file="/mnt/extra-addons/sis_module/demo/images/HappyFresh.png"/>
+            <field name="phoneNumber">+62614571380 </field>
+        </record>
+
+        <record id="solution_1" model="sis_module.solutions">
+            <field name="name">Sistem Pencatatan Kehadiran Driver Gojek</field>
+            <field name="description">Sistem informasi dengan menggunakan Google Sheets</field>
+            <field name="proposal">https://www.gotocompany.com/</field>
+            <field name="usedBy" ref="sis_module.client_1"/>
+            <field name="builtWith" eval="[ref('sis_module.technology_1')]"/>
+        </record>
+
+        <record id="solution_2" model="sis_module.solutions">
+            <field name="name">Sistem Pencatatan Kehadiran Driver Grab</field>
+            <field name="description">Sistem informasi dengan menggunakan Google Sheets</field>
+            <field name="proposal">https://www.grab.com/id/</field>
+            <field name="usedBy" ref="sis_module.client_2"/>
+            <field name="builtWith" eval="[ref('sis_module.technology_1')]"/>
+        </record>
+
+        <record id="solution_3" model="sis_module.solutions">
+            <field name="name">Sistem Pencatatan Tiket Pesawat</field>
+            <field name="description">Sistem informasi dengan menggunakan Google Sheets dan Google Drive</field>
+            <field name="proposal">https://www.traveloka.com/en-id/</field>
+            <field name="usedBy" ref="sis_module.client_3"/>
+            <field name="builtWith" eval="[ref('sis_module.technology_1'), ref('sis_module.technology_2')]"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+        <record id="sis_module.technology_tree" model="ir.ui.view">
+            <field name="name">sis_module.technologies.tree</field>
+            <field name="model">sis_module.technologies</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="utility"/>
+                    <field name="logo"/>
+                    <field name="resource"/>
+                    <field name="build"/>
+                    <field name="hasRisk"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sis_module.technology_search" model="ir.ui.view">
+            <field name="name">sis_module.technologies.search</field>
+            <field name="model">sis_module.technologies</field>
+            <field name="arch" type="xml">
+                <search string="Clients">
+                    <field name="name"/>
+                    <field name="utility"/>
+                    <field name="build"/>
+                    <field name="hasRisk"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="sis_module.technology_form" model="ir.ui.view">
+            <field name="name">sis_module.technologies.form</field>
+            <field name="model">sis_module.technologies</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="utility"/>
+                            </group>
+                            <group>
+                                <field name="logo"/>
+                            </group>
+                            <group>
+                                <field name="resource"/>
+                            </group>
+                            <group>
+                                <field name="build"/>
+                            </group>
+                            <group>
+                                <field name="hasRisk"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sis_module.technology_kanban" model="ir.ui.view">
+            <field name="name">sis_module.technologies.kanban</field>
+            <field name="model">sis_module.technologies</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="utility"/>
+                    <field name="logo"/>
+                    <field name="resource"/>
+                    <field name="build"/>
+                    <field name="hasRisk"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt="Avatar" t-att-src="kanban_image('sis_module.technologies', 'logo', record.id.raw_value)" />
+                                </div>
+                                <div class="o_kanban_details">
+                                    <li>
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        <field name="utility"/>
+                                    </li>
+                                    <li>
+                                        <field name="resource"/>
+                                    </li>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>

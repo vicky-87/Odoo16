@@ -1,0 +1,111 @@
+<odoo>
+    <data>
+        <record id="sis_module.client_tree" model="ir.ui.view">
+            <field name="name">sis_module.clients.tree</field>
+            <field name="model">sis_module.clients</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="outline"/>
+                    <field name="industry"/>
+                    <field name="logo"/>
+                    <field name="phoneNumber"/>
+                    <field name="uses"/>
+                    <field name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sis_module.client_search" model="ir.ui.view">
+            <field name="name">sis_module.clients.search</field>
+            <field name="model">sis_module.clients</field>
+            <field name="arch" type="xml">
+                <search string="Clients">
+                    <field name="name"/>
+                    <field name="outline"/>
+                    <field name="industry"/>
+                    <field name="phoneNumber"/>
+                    <field name="uses"/>
+                    <field name="create_uid"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="sis_module.client_form" model="ir.ui.view">
+            <field name="name">sis_module.clients.form</field>
+            <field name="model">sis_module.clients</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="outline"/>
+                            </group>
+                            <group>
+                                <field name="industry"/>
+                            </group>
+                            <group>
+                                <field name="logo"/>
+                            </group>
+                            <group>
+                                <field name="phoneNumber"/>
+                            </group>
+                            <group>
+                                <field name="uses"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sis_module.client_kanban" model="ir.ui.view">
+            <field name="name">sis_module.clients.kanban</field>
+            <field name="model">sis_module.clients</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="outline"/>
+                    <field name="industry"/>
+                    <field name="logo"/>
+                    <field name="phoneNumber"/>
+                    <field name="uses"/>
+                    <field name="create_uid"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt="Avatar" t-att-src="kanban_image('sis_module.clients', 'logo', record.id.raw_value)" />
+                                </div>
+                                <div class="o_kanban_details">
+                                    <li>
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        <field name="outline"/>
+                                    </li>
+                                    <li>
+                                        <field name="industry"/>
+                                    </li>
+                                    <li>
+                                        <field name="phoneNumber"/>
+                                    </li>
+                                    <li>
+                                        <field name="uses"/>
+                                    </li>
+                                    <li>
+                                        <field name="create_uid"/>
+                                    </li>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>

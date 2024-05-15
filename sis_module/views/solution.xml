@@ -1,0 +1,96 @@
+<odoo>
+    <data>
+        <record id="sis_module.solution_tree" model="ir.ui.view">
+            <field name="name">sis_module.solutions.tree</field>
+            <field name="model">sis_module.solutions</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="proposal"/>
+                    <field name="usedBy"/>
+                    <field name="builtWith"/>
+                    <field name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sis_module.solution_search" model="ir.ui.view">
+            <field name="name">sis_module.solutions.search</field>
+            <field name="model">sis_module.solutions</field>
+            <field name="arch" type="xml">
+                <search string="Clients">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="usedBy"/>
+                    <field name="builtWith"/>
+                    <field name="create_uid"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="sis_module.solution_form" model="ir.ui.view">
+            <field name="name">sis_module.solutions.form</field>
+            <field name="model">sis_module.solutions</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="proposal"/>
+                            </group>
+                            <group>
+                                <field name="usedBy"/>
+                            </group>
+                            <group>
+                                <field name="builtWith"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sis_module.solution_kanban" model="ir.ui.view">
+            <field name="name">sis_module.solutions.kanban</field>
+            <field name="model">sis_module.solutions</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="proposal"/>
+                    <field name="usedBy"/>
+                    <field name="builtWith"/>
+                    <field name="create_uid"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_details">
+                                    <li>
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        <field name="description"/>
+                                    </li>
+                                    <li>
+                                        <field name="proposal"/>
+                                    </li>
+                                    <li>
+                                        <field name="create_uid"/>
+                                    </li>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </data>
+</odoo>

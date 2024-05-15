@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sis_module_client_manager,SIS Module Client Manager,model_sis_module_clients,,1,1,1,1
+sis_module_solution_manager,SIS Module Solution Manager,model_sis_module_solutions,,1,1,1,1
+sis_module_technology_manager,SIS Module Technology Manager,model_sis_module_technologies,,1,1,1,1
+sis_module_vulnerability_manager,SIS Module Vulnerability Manager,model_sis_module_vulnerabilities,,1,1,1,1

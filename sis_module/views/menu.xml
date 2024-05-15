@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record id="sis_module.client_window" model="ir.actions.act_window">
+            <field name="name">Clients</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sis_module.clients</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <record id="sis_module.solution_window" model="ir.actions.act_window">
+            <field name="name">Solutions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sis_module.solutions</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <record id="sis_module.technology_window" model="ir.actions.act_window">
+            <field name="name">Technologies</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sis_module.technologies</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <record id="sis_module.vulnerability_window" model="ir.actions.act_window">
+            <field name="name">Vulnerabilities</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sis_module.vulnerabilities</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <menuitem name="Sistem Informasi Solusi" id="sis_module.menu_root"/>
+        <menuitem name="Client" id="sis_module.menu_client" parent="sis_module.menu_root" action="sis_module.client_window"/>
+        <menuitem name="Solution" id="sis_module.menu_solution" parent="sis_module.menu_root" action="sis_module.solution_window"/>
+        <menuitem name="Technology" id="sis_module.menu_technology" parent="sis_module.menu_root" action="sis_module.technology_window" />
+        <menuitem name="Vulnerability" id="sis_module.menu_vulnerability" parent="sis_module.menu_root" action="sis_module.vulnerability_window" />
+    </data>
+</odoo>

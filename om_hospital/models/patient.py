@@ -20,8 +20,7 @@ class HospitalPatient(models.Model):
 
     @api.model
     def create(self, vals):
-        # print("Odoo Mates", vals)
-        vals['ref'] = 'OMTEST'
+        vals['ref'] = self.env['ir.sequence'].next_by_code('hospital.patient')
         return super(HospitalPatient, self).create(vals)
    
     @api.depends('date_of_birth')
